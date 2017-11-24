@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pelota</string>
+
+    <string name="dificultad">Por favor, escoge un nivel:</string>
+    <string name="facil">Fácil</string>
+    <string name="medio">Normal</string>
+    <string name="dificil">Difícil</string>
+</resources>
