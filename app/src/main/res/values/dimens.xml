@@ -12,4 +12,6 @@
 
     <dimen name="alto_min_boton">36dp</dimen>
     <dimen name="texto_boton">24sp</dimen>
+
+    <dimen name="margen_inferior_scroll">60dp</dimen>
 </resources>

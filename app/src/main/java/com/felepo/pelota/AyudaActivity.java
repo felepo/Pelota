@@ -1,21 +1,19 @@
 package com.felepo.pelota;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class AyudaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ayuda);
     }
 
-    public void ayuda(View vista)
+    public void volver(View vista)
     {
-        Intent intencion = new Intent(this, AyudaActivity.class);
-        startActivity(intencion);
+        onBackPressed();
     }
 }

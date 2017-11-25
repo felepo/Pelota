@@ -5,4 +5,14 @@
     <string name="facil">Easy</string>
     <string name="medio">Standard</string>
     <string name="dificil">Dificult</string>
+
+    <string name="ayuda">Help</string>
+
+    <string name="texto_ayuda">
+        The objective of the game is to prevent the ball from falling to the ground, touching the ball with your finger.\n\n
+        To push the ball in a specific direction, we will press the opposite direction on the screen.
+        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Cheer Up!
+    </string>
+
+    <string name="volver">Back</string>
 </resources>
