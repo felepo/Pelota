@@ -22,11 +22,16 @@
         </activity>
 
         <!-- Ayuda Activity -->
-        <activity android:name=".AyudaActivity"
+        <activity
+            android:name=".AyudaActivity"
             android:screenOrientation="landscape">
-
         </activity>
 
+        <!--Actividad de Gestion-->
+        <activity
+            android:name=".Gestion"
+            android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>
