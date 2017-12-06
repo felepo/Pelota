@@ -1,5 +1,6 @@
 package com.felepo.pelota;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ public class Gestion extends AppCompatActivity
     private int dificultad;
     private int FPS = 30;
     private Handler temporizador;
+    private int toques;             //Variable para guardar el record de toques
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -18,11 +20,15 @@ public class Gestion extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gestion);
 
+        toques = 0;
+
         Bundle extras = getIntent().getExtras();
         dificultad = extras.getInt("DIFICULTAD");
 
         partida = new Partida(getApplicationContext(), dificultad);
         setContentView(partida);
+
+        //Esto sirve para especificar en cuanto tiempo la pelota empieza a caer
         temporizador = new Handler();
         temporizador.postDelayed(elHilo, 2000);
     }
@@ -49,7 +55,11 @@ public class Gestion extends AppCompatActivity
         int x = (int) evento.getX();
         int y = (int) evento.getY();
 
-        partida.toque(x, y);
+        //Si el toque es correcto, entonces se aumenta la variable
+        if( partida.toque(x, y) )
+        {
+            toques++;
+        }
 
         return false;
     }
@@ -58,6 +68,12 @@ public class Gestion extends AppCompatActivity
     {
         //Limpia el hilo que se usó
         temporizador.removeCallbacks(elHilo);
+
+        //Antes de destruir el activity, se manda el record con el bundle
+        Intent in = new Intent();
+        in.putExtra("PUNTUACION", toques);
+
+        setResult(RESULT_OK, in);
 
         //Destruye el activity actual
         finish();
