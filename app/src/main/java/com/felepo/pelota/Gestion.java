@@ -85,7 +85,8 @@ public class Gestion extends AppCompatActivity
 
         //Antes de destruir el activity, se manda el record con el bundle
         Intent in = new Intent();
-        in.putExtra("PUNTUACION", toques);
+        //La puntuacion depende de el nivel de dificultad
+        in.putExtra("PUNTUACION", toques * dificultad);
 
         setResult(RESULT_OK, in);
 
